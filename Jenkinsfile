@@ -8,17 +8,17 @@ pipeline {
         }
         stage('Build') {
             steps {
-                sh './mvnw clean install'
+                bat './mvnw clean install'
             }
         }
         stage('Test with Jacoco') {
             steps {
-                sh './mvnw test'
+                bat './mvnw test'
             }
         }
         stage('Generate Jacoco Report') {
             steps {
-                sh './mvnw jacoco:report'
+                bat './mvnw jacoco:report'
             }
         }
     }
